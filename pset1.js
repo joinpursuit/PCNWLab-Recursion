@@ -16,6 +16,12 @@
         - factorial is defined to be n!
             or, 5! = 5*4*3*2*1
 */
+const factorial = n => {
+    if(n <= 0) return 1;
+    return n * factorial(n-1);
+}
+console.log(factorial(5));
+
 
 /*  2
     @function getInRange
@@ -30,6 +36,17 @@
     HINT:
         - remember to account for what happens if s > e!
 */
+const getInRange = (s, e, arr=[]) => {
+    if(s > e) return "cannot get range";
+    else if(s === e) {
+        arr.unshift(s);
+        return arr;
+    }
+    arr.unshift(e);
+    e--;
+    return getInRange(s, e, arr);
+}
+console.log(getInRange(2,5));
 
 /*  3
     @function isEven
@@ -39,6 +56,9 @@
         - determine without using % operator or Math.floor(), etc
             whether or not a number is even
 */
+const isEven = n => {
+    
+}
 
 /*  4
     @function pow
@@ -49,6 +69,10 @@
         - determine without using anything other than multiplication
             the value of b^n
 */
+const pow = (b,n) => {
+
+}
+
 
 /*  5
     @function multiply
@@ -59,6 +83,7 @@
         - determine without using multiplication operator the product
             of a and b
 */
+
 
 /*  6
     @function reverse
