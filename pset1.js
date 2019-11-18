@@ -35,6 +35,12 @@ const factorial = num => {
     HINT:
         - remember to account for what happens if s > e!
 */
+const getInRange = (start, end, output = []) => {
+    if(start > end) return output;
+    output.push(start);
+    return getInRange(start + 1, end, output)
+}
+// console.log(getInRange(2, 5));
 
 
 /*  3
@@ -45,6 +51,14 @@ const factorial = num => {
         - determine without using % operator or Math.floor(), etc
             whether or not a number is even
 */
+const isEven = num => {
+    if(num === 0) return true; 
+    if(num === 1) return false; 
+    return isEven(num - 2)
+}
+
+// console.log(isEven(7));
+// console.log(isEven(6));
 
 /*  4
     @function pow
