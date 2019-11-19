@@ -16,6 +16,11 @@
         - factorial is defined to be n!
             or, 5! = 5*4*3*2*1
 */
+const factorial = (num) => {
+    if (num === 0) return 1;
+    return num * factorial(num -1)
+}
+console.log(factorial(5))
 
 /*  2
     @function getInRange
@@ -30,7 +35,14 @@
     HINT:
         - remember to account for what happens if s > e!
 */
-
+const getInRange = (num1,num2) =>{
+    let rangenum =[]
+    if(num1 === 0 && num2 === 0) return rangenum.push(0)
+    if(num1 > num2){
+        return 0
+    }
+    return rangenum 
+}
 /*  3
     @function isEven
     @param n {number}
@@ -39,7 +51,12 @@
         - determine without using % operator or Math.floor(), etc
             whether or not a number is even
 */
+const isEven = num => {
+    if( num <= 0) return num === 0 ? true:false
 
+    return isEven(num - 2)
+}
+console.log(isEven(5))
 /*  4
     @function pow
     @param b {number}
@@ -49,7 +66,11 @@
         - determine without using anything other than multiplication
             the value of b^n
 */
-
+const pow = (num1,num2) => {
+    if (num2 === 0) return 1
+    return num1 * pow(num1,num2-1)
+}
+console.log(pow(4,2))
 /*  5
     @function multiply
     @param a {number}
