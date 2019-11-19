@@ -16,6 +16,12 @@
         - factorial is defined to be n!
             or, 5! = 5*4*3*2*1
 */
+const factorial = (num) =>{
+    if(num === 1) return 1
+    return num * factorial(num -1)
+
+}
+console.log(factorial(5))
 
 /*  2
     @function getInRange
@@ -31,6 +37,24 @@
         - remember to account for what happens if s > e!
 */
 
+const getInRange = (s,e, arr = []) =>{
+    
+    if(s === e) {
+    // arr.push(e)
+    arr.push(e) 
+    return arr
+    } 
+    if(s > e){
+    arr.push(s)
+    return getInRange(s-1,e,arr)
+    } else{
+    arr.push(s)
+    return getInRange(++s,e,arr)
+
+    }
+
+}
+console.log(getInRange(2,5))
 /*  3
     @function isEven
     @param n {number}
