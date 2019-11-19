@@ -16,13 +16,14 @@
         - factorial is defined to be n!
             or, 5! = 5*4*3*2*1
 */
-const factorial = (num, product = 1) => {
-    if(num === 1) return product;
-    product *= num;
-    num--;
-    return factorial(num, product)
+const factorial = (n, product = 1) => {
+    if(n === 1) return product;
+    product *= n;
+    n--;
+    return factorial(n, product)
 }
 console.log(factorial(5))
+
 /*  2
     @function getInRange
     @param s {number}
@@ -36,12 +37,14 @@ console.log(factorial(5))
     HINT:
         - remember to account for what happens if s > e!
 */
-const getInRange = (num1, num2, arr = []) => {
-    if(arr[arr.length -1] === num2) return arr;
-    arr.push(num1);
-    return getInRange(num1 + 1, num2, arr);
+const getInRange = (s, e, arr = []) => {
+    if(arr[arr.length -1] === e) return arr;
+    arr.push(s);
+    return getInRange(s + 1, e, arr);
 }
 console.log(getInRange(2,5))
+
+
 /*  3
     @function isEven
     @param n {number}
@@ -51,10 +54,10 @@ console.log(getInRange(2,5))
             whether or not a number is even
 */
 
-const isEven = (num) => {
-    if(num === 0) return true;
-    else if(num === 1) return false;
-    else return isEven(num-2)
+const isEven = (n) => {
+    if(n === 0) return true;
+    else if(n === 1) return false;
+    else return isEven(n - 2)
 }
 console.log(isEven(4))
 
@@ -85,7 +88,7 @@ const multiply = (a,b) => {
     if(b === 0) return 0;
     else return a + multiply(a, b - 1);
 }
-console.log(multiply(4,4))
+console.log(multiply(1,4))
 
 /*  6
     @function reverse
@@ -94,6 +97,11 @@ console.log(multiply(4,4))
     @description:
         - recursively reverse a string
 */
+
+const reverse = (s) => {
+    if(s === "") return ""
+    // else return string.reverse
+}
 
 /*  7
     @function isPalindrome
