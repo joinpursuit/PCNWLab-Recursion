@@ -51,6 +51,13 @@ console.log(getInRange(2,5))
             whether or not a number is even
 */
 
+const isEven = (num) => {
+    if(num === 0) return true;
+    else if(num === 1) return false;
+    else return isEven(num-2)
+}
+console.log(isEven(5))
+
 /*  4
     @function pow
     @param b {number}
