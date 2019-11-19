@@ -80,7 +80,11 @@ console.log(pow(4,2))
         - determine without using multiplication operator the product
             of a and b
 */
-
+const multiply = (num1,num2) => {
+    if(num2 === 0) return 0
+    return num1 + multiply(num1,num2 - 1)
+}
+console.log(multiply(3,2))
 /*  6
     @function reverse
     @param s {string}
@@ -88,7 +92,10 @@ console.log(pow(4,2))
     @description:
         - recursively reverse a string
 */
-
+const reverse = (str) =>{
+    if(str = "") return ""
+    return reverse(str)
+}
 /*  7
     @function isPalindrome
     @param s {string}
