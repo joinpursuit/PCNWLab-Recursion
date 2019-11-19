@@ -1,32 +1,73 @@
 // Sum all integers below a given integer.
 // sumBelow(10); // 45
 // sumBelow(7); // 21
-const sumBelow = n => {};
+const sumBelow = n => {
+    if(n === 0) return 0;
+    return (n - 1) + sumBelow(n - 1)
+};
+console.log(sumBelow(7))
+
 
 // Determine if a number is a power of two.
 // powerOfTwo(1); // true
 // powerOfTwo(16); // true
 // powerOfTwo(10); // false
-const powerOfTwo = n => {};
+// const powerOfTwo = (n) => {
+//     if(n/2 === 1) return true;
+//     if(n/2 )
+// }
+// console.log(powerOfTwo(16))
+
 
 // Write a function that returns the remainder of x divided by y without using the
 // modulo (%) operator.
 // modulo(5,2) // 1
 // modulo(17,5) // 2
 // modulo(22,6) // 4
-const modulo = (x, y) => {};
+const modulo = (x, y) => {
+    if (x < y) {
+      return x;
+    }
+    let remainder = x - y
+    
+    return modulo(remainder, y);
+  };
+  
+  console.log(modulo(270, 192))
 
 // Find the greatest common divisor (gcd) of two positive numbers. The GCD of two
 // integers is the greatest integer that divides both x and y with no remainder.
 // gcd(4,36); // 4
 // https://www.khanacademy.org/computing/computer-science/cryptography/modarithmetic/a/the-euclidean-algorithm
-const gcd = (x, y) => {};
+const gcd = (x, y) => {
+    if(y === 0){
+        return x
+    }
+    return gcd(y, x%y)
+
+};
+
+console.log(gcd(270,192))
 
 // Write a function that compares each character of two strings and returns true if
 // both are identical.
-// compareStr('house', 'houses') // false
 // compareStr('tomato', 'tomato') // true
-const compareStr = (str1, str2) => {};
+const compareStr = (str1, str2) => {
+    if(str1.length === 0 && str2.length === 0){
+        return true
+        
+    } else if (str1.length !== str2.length){
+        return false
+    }
+    
+    if(str1[0] === str2[0]){
+        newStr1 =str1.shift()
+        newStr2 = str2.unshift()
+    }
+    return compareStr(newStr1,newStr2)
+}
+
+console.log(compareStr('house', 'houses') )// false
 
 
 // Given an array of words, return a new array containing each word capitalized.
