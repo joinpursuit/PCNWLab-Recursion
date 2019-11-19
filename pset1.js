@@ -16,6 +16,11 @@
         - factorial is defined to be n!
             or, 5! = 5*4*3*2*1
 */
+const factorial = (num) =>{
+    if(num ===1) return 1;
+    return num * factorial(num-1)
+}
+console.log(factorial(5))
 
 /*  2
     @function getInRange
@@ -30,6 +35,12 @@
     HINT:
         - remember to account for what happens if s > e!
 */
+// const getInRange = (num1, num2) =>{
+//     if(num1 <= num2) newArr.push(num1);
+//     // getInRange(num1+1)
+//     let newArr = getInRange(num1+1)
+// }
+// console.log(getInRange(2, 5))
 
 /*  3
     @function isEven
@@ -40,6 +51,15 @@
             whether or not a number is even
 */
 
+const isEven = (n) => {
+if(n===2) {
+    return true
+} else if (n ===1){
+    return false
+}
+return isEven(n-2)
+}
+console.log(isEven(62))
 /*  4
     @function pow
     @param b {number}
@@ -49,6 +69,12 @@
         - determine without using anything other than multiplication
             the value of b^n
 */
+
+const pow = (num1, num2) =>{
+    if(num2 === 0) return 1
+    return num1 * pow(num1, (num2-1))
+}
+console.log(pow(5, 3))
 
 /*  5
     @function multiply
@@ -60,6 +86,12 @@
             of a and b
 */
 
+const multiply = (num1, num2) => {
+    if(num2 === 0) return 0; 
+    return num1 + multiply(num1, (num2 - 1))
+}
+console.log(multiply(5, 5))
+
 /*  6
     @function reverse
     @param s {string}
@@ -67,6 +99,17 @@
     @description:
         - recursively reverse a string
 */
+
+const reverse = (str) => {
+    if(str.length === 0) return "";
+    return str.slice(str.length) + reverse(str.slice(0, str.length - 1))
+    
+    // slice(1) + reverse(str)
+    
+    // (str.length - 1) + reverse(str.length - 1)
+    
+}
+console.log(reverse("hello"))
 
 /*  7
     @function isPalindrome
