@@ -91,20 +91,43 @@ const multipy = (num1, num2) => {
 }
 console.log(multipy(2, 8))
 /*  6
-    @function reverse
-    @param s {string}
-    @returns {string}
-    @description:
-        - recursively reverse a string
+@function reverse
+@param s {string}
+@returns {string}
+@description:
+- recursively reverse a string
 */
+console.log('question 6')
+
+const strRev = (str)=>{
+    if(str==="") return "";
+    return strRev(str.substr(1)+ str.charAt(0))
+}
+function reverseString(str) {
+    if (str === "")
+    return "";
+    else
+    return reverseString(str.substr(1)) + str.charAt(0);
+}
+
+console.log(reverseString("hello"))
+
+// console.log(strRev("ABCD"))
 
 /*  7
-    @function isPalindrome
-    @param s {string}
-    @returns {boolean}
-    @description:
-        - recursively determine if a string is a palindrome
+@function isPalindrome
+@param s {string}
+@returns {boolean}
+@description:
+- recursively determine if a string is a palindrome
 */
+console.log('question 7')
+const isPalindrome = (str)=>{
+    newStr = ""
+    if(str.length === newStr.length ) return str === newStr ? true : false
+    return ???????????????????????
+}
+console.log(isPalindrome("ABBA"))
 
 
 /*  8
