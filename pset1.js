@@ -109,7 +109,7 @@ const multiply=(a,b,product = a) =>{
 
 }
 
-console.log(multiply(5,6))
+// console.log(multiply(5,6))
 
 /*  6
     @function reverse
@@ -119,6 +119,12 @@ console.log(multiply(5,6))
         - recursively reverse a string
 */
 
+const reverse = (str,str2="",idx=s.length-1) => {
+   if (str.length === str2.length) return s2
+   str2 += str[n]
+   return reverse(str,str2,--idx)
+}
+console.log(reverse("mike"))
 
 /*  7
     @function isPalindrome
