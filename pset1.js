@@ -17,6 +17,14 @@
             or, 5! = 5*4*3*2*1
 */
 
+const factorial = (num)=>{
+    let product =1
+    for(let i = 1; i<= num;i++){
+  console.log ( product *= i)  
+    } 
+}
+(factorial(4))
+
 /*  2
     @function getInRange
     @param s {number}
