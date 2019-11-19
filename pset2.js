@@ -7,7 +7,15 @@ const sumBelow = n => {};
 // powerOfTwo(1); // true
 // powerOfTwo(16); // true
 // powerOfTwo(10); // false
-const powerOfTwo = n => {};
+const powerOfTwo = n => {
+    if(n === 0) return false
+    if(n === 1) return true;
+    return Math.log2(powerOfTwo(n-1)) % 1 === 0;
+}
+console.log(powerOfTwo(1)) // true
+console.log(powerOfTwo(16)); // true
+console.log(powerOfTwo(10)); // false
+
 
 // Write a function that returns the remainder of x divided by y without using the
 // modulo (%) operator.

@@ -20,7 +20,7 @@ const factorial = n => {
     if(n <= 0) return 1;
     return n * factorial(n-1);
 }
-console.log(factorial(5));
+// console.log(factorial(5));
 
 
 /*  2
@@ -37,15 +37,20 @@ console.log(factorial(5));
         - remember to account for what happens if s > e!
 */
 const getInRange = (s, e, arr=[]) => {
-    if(s > e) return "cannot get range";
-    else if(s === e) {
-        arr.unshift(s);
+    if (s === e){
+        arr.push(s);
         return arr;
     }
-    arr.unshift(e);
-    e--;
-    return getInRange(s, e, arr);
+    if(s > e) {
+        arr.push(s);
+        return getInRange(s-1, e, arr);
+    } 
+    if (s < e){
+        arr.push(s);
+        return getInRange(s+1,e, arr);
+    } 
 }
+console.log(getInRange(5,2));
 console.log(getInRange(2,5));
 
 /*  3
@@ -57,8 +62,11 @@ console.log(getInRange(2,5));
             whether or not a number is even
 */
 const isEven = n => {
-    
+    if(n === 0) return true;
+    if(n === 1) return false;
+    return isEven(n-2);
 }
+// console.log(isEven(10000));
 
 /*  4
     @function pow
@@ -70,8 +78,12 @@ const isEven = n => {
             the value of b^n
 */
 const pow = (b,n) => {
-
+    if(n < 0) return 1 / b**n
+    if(n === 0) return 1;
+    if(n === 1) return b;
+    return b * pow(b,n-1);
 }
+// console.log(pow(4,2));
 
 
 /*  5
@@ -83,6 +95,13 @@ const pow = (b,n) => {
         - determine without using multiplication operator the product
             of a and b
 */
+const multiply = (a, b) => {
+    if(a === 0 || b === 0) return 0;
+    if(a === 1) return b;
+    if(b === 1) return a;
+    return a + multiply(a, b-1)
+}
+// console.log(multiply(25,3));
 
 
 /*  6
@@ -92,6 +111,12 @@ const pow = (b,n) => {
     @description:
         - recursively reverse a string
 */
+// const reverse = s => {
+//     if(s.length <= 0) return "no string to reverse";
+//     if(s.length === 1) return s;
+//     return s.length-1 + reverse(s+1);
+// }
+// console.log(reverse("sucka"))
 
 /*  7
     @function isPalindrome
