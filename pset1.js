@@ -16,7 +16,10 @@
         - factorial is defined to be n!
             or, 5! = 5*4*3*2*1
 */
-
+const factorial = (num) => {
+        if (num === 0) return 0;
+        return factorial(num - 1) * num
+}
 /*  2
     @function getInRange
     @param s {number}
@@ -26,10 +29,18 @@
         - generate numbers in range
             for example getInRange(2,5) 
             should give us back [2,3,4,5]
+        
     
     HINT:
         - remember to account for what happens if s > e!
 */
+const range = (a, b) => {
+        let arr = [];
+        if (a > b) return arr
+        arr.push(a)
+        return arr.concat(range(a + 1, b))
+}
+console.log(range(2, 5))
 
 /*  3
     @function isEven
@@ -39,6 +50,12 @@
         - determine without using % operator or Math.floor(), etc
             whether or not a number is even
 */
+// const isEven = (num) => {
+//         if (num === 0) return 0;
+//         if ((num / 2) *
+
+
+// }
 
 /*  4
     @function pow
@@ -49,7 +66,12 @@
         - determine without using anything other than multiplication
             the value of b^n
 */
-
+// const multi = (b, n) => {
+//         if (b === 0 || n === 0) return 0;
+//         let pow = b * b
+//         return pow * multi(b, n - 1)
+// }
+// console.log(multi(2, 3))
 /*  5
     @function multiply
     @param a {number}
@@ -106,7 +128,3 @@
     @description:
         - recursively implement reduce
 */
-
-
-
-
