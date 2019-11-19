@@ -21,7 +21,7 @@ const factorial = (num) =>{
     return num * factorial(num -1)
 
 }
-console.log(factorial(5))
+// console.log(factorial(5))
 
 /*  2
     @function getInRange
@@ -40,7 +40,7 @@ console.log(factorial(5))
 const getInRange = (s,e, arr = []) =>{
     
     if(s === e) {
-    // arr.push(e)
+
     arr.push(e) 
     return arr
     } 
@@ -54,15 +54,26 @@ const getInRange = (s,e, arr = []) =>{
     }
 
 }
-console.log(getInRange(2,5))
+// console.log(getInRange(2,5))
+
 /*  3
     @function isEven
     @param n {number}
     @returns {boolean}
     @description:
-        - determine without using % operator or Math.floor(), etc
+        - determine without using % operator or Math.floor(), etc?
             whether or not a number is even
 */
+
+const isEven=(num) =>{
+
+
+    if(num === 0) return true
+    if(num === 1) return false
+    
+    return isEven(num-2)  
+}
+// console.log(isEven(100))
 
 /*  4
     @function pow
@@ -74,6 +85,13 @@ console.log(getInRange(2,5))
             the value of b^n
 */
 
+const pow = (b,n, result = b) =>{
+    if(n===1) return result
+    result *= b
+    return pow(b,n-1,result)
+}
+// console.log(pow(10,3))
+
 /*  5
     @function multiply
     @param a {number}
@@ -84,6 +102,15 @@ console.log(getInRange(2,5))
             of a and b
 */
 
+const multiply=(a,b,product = a) =>{
+    if(b===1) return product
+    product += a
+    return multiply(a,--b,product)
+
+}
+
+console.log(multiply(5,6))
+
 /*  6
     @function reverse
     @param s {string}
@@ -91,6 +118,7 @@ console.log(getInRange(2,5))
     @description:
         - recursively reverse a string
 */
+
 
 /*  7
     @function isPalindrome
