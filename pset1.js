@@ -16,6 +16,12 @@
         - factorial is defined to be n!
             or, 5! = 5*4*3*2*1
 */
+console.log('QUESTION1')
+const factorial = num => {
+    if (num === 0) return 1
+    return num * factorial(num - 1)
+}
+console.log(factorial(5))
 
 /*  2
     @function getInRange
@@ -30,6 +36,14 @@
     HINT:
         - remember to account for what happens if s > e!
 */
+console.log('QUESTION 2')
+const getInRange = (num1, num2, arr = []) => {
+    if (num1 > num2) return arr
+    arr.push(num1)
+    num1++
+    return getInRange(num1, num2, arr)
+}
+console.log(getInRange(2, 5))
 
 /*  3
     @function isEven
@@ -39,17 +53,28 @@
         - determine without using % operator or Math.floor(), etc
             whether or not a number is even
 */
-
+console.log('QUESTION 3')
+const isEven = num => {
+    if (num <= 0) return num === 0 ? true : false
+    return isEven(num - 2)
+}
+console.log(isEven(3))
 /*  4
     @function pow
     @param b {number}
     @param n {number}
+
     @returns {number}
     @description:
         - determine without using anything other than multiplication
             the value of b^n
 */
-
+console.log('QUESTION 4')
+const pow = (num1, num2) => {
+    if (num2 === 0) return 1
+    return (num1 * pow(num1, --num2))
+}
+console.log(pow(2, 10))
 /*  5
     @function multiply
     @param a {number}
@@ -59,7 +84,12 @@
         - determine without using multiplication operator the product
             of a and b
 */
-
+console.log('question5')
+const multipy = (num1, num2) => {
+    if (num1 === 0 || num2 === 0) return 0
+    return num1 + multipy(num1, --num2)
+}
+console.log(multipy(2, 8))
 /*  6
     @function reverse
     @param s {string}
