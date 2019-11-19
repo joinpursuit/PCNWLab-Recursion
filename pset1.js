@@ -56,7 +56,7 @@ const isEven = (num) => {
     else if(num === 1) return false;
     else return isEven(num-2)
 }
-console.log(isEven(5))
+console.log(isEven(4))
 
 /*  4
     @function pow
@@ -68,6 +68,9 @@ console.log(isEven(5))
             the value of b^n
 */
 
+
+
+
 /*  5
     @function multiply
     @param a {number}
@@ -77,6 +80,12 @@ console.log(isEven(5))
         - determine without using multiplication operator the product
             of a and b
 */
+
+const multiply = (a,b) => {
+    if(b === 0) return 0;
+    else return a + multiply(a, b - 1);
+}
+console.log(multiply(4,4))
 
 /*  6
     @function reverse
@@ -124,7 +133,3 @@ console.log(isEven(5))
     @description:
         - recursively implement reduce
 */
-
-
-
-
