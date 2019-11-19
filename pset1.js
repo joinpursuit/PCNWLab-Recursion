@@ -17,7 +17,21 @@
             or, 5! = 5*4*3*2*1
 */
 
-/*  2
+// const factorial = (num)=>{
+//     let product =1
+//     for(let i = 1; i<= num;i++){
+//   console.log ( product *= i)  
+//     } 
+// }
+// (factorial(4))
+// Number 1
+const factorial = (num) =>{
+    if (num < 0) return;
+    if (num === 0) return 1;
+    return num * factorial(num - 1);
+  }
+  console.log(factorial(4));
+/* Number   2
     @function getInRange
     @param s {number}
     @param e {number}
@@ -30,6 +44,20 @@
     HINT:
         - remember to account for what happens if s > e!
 */
+const getInRange=(s,e)=>{
+    let results = [];
+    if(s > e){
+        return results;
+    }
+    results.push(s);
+ return  results.concat(getInRange(s + 1 ,e));
+ }
+ console.log(getInRange(1,5))
+
+
+
+
+
 
 /*  3
     @function isEven
@@ -39,6 +67,11 @@
         - determine without using % operator or Math.floor(), etc
             whether or not a number is even
 */
+
+
+
+
+
 
 /*  4
     @function pow
