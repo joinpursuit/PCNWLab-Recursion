@@ -7,7 +7,11 @@
     accidental infinite loops. Feel free to turn back on but
     do so AT YOUR OWN RISK.
 */
-
+const factorial = (n) => {
+    if (n === 0) return 1;
+    return n * factorial(n - 1)
+}
+console.log(factorial(3))
 /*  1
     @function factorial
     @param n {number}
@@ -17,6 +21,13 @@
             or, 5! = 5*4*3*2*1
 */
 
+const getInRange = (num1, num2) => {
+    let ouput = [];
+    if (num1 < num2) return num1;
+    ouput.push(num1)
+    return num1 + getInRange(num1 + 1)
+}
+console.log(getInRange(2,5))
 /*  2
     @function getInRange
     @param s {number}
@@ -40,6 +51,13 @@
             whether or not a number is even
 */
 
+const isEven = (num) => {
+    if (num === 0) return true
+    if (num === 1) return false
+    return isEven(num - 2)
+}
+
+console.log(isEven(21))
 /*  4
     @function pow
     @param b {number}
@@ -50,6 +68,12 @@
             the value of b^n
 */
 
+const pow = (b, n) => {
+    if (n === 0) return 1;
+    return b * pow(b, n -1)
+}
+console.log(pow(3, 4))
+
 /*  5
     @function multiply
     @param a {number}
@@ -59,6 +83,27 @@
         - determine without using multiplication operator the product
             of a and b
 */
+
+// const multiply = (a, b) => {
+//     if (a || b == 0) {
+//         return 0;
+//     } else {
+//     // if (a || b === 1) return 1;
+//     return a * multiply(a, b - 1)
+//     }
+// }
+const multiply = (a, b) => {
+    if (a === 0) {
+        return 0;
+    }
+    if (b === 0) { 
+        return 0;
+    } else {
+    return a + multiply(a, b - 1)
+    }
+}
+
+console.log(multiply(2,3))
 
 /*  6
     @function reverse
