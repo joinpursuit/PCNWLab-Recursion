@@ -53,19 +53,19 @@ console.log(gcd(270,192))
 // both are identical.
 // compareStr('tomato', 'tomato') // true
 const compareStr = (str1, str2) => {
-    if(str1.length === 0 && str2.length === 0){
-        return true
-        
-    } else if (str1.length !== str2.length){
+    if(str1.length === 1 && str2.length === 1){
+        if(str1[0] === str2[0]){
+            return true
+        }
+    }
+    if(str1[0] === str2[0]){
+        return compareStr(str1.slice(1),str2.slice(1))
+    }
+    if(str1[0] !== str2[0]){
         return false
     }
-    
-    if(str1[0] === str2[0]){
-        newStr1 =str1.shift()
-        newStr2 = str2.unshift()
-    }
-    return compareStr(newStr1,newStr2)
-}
+};
+
 
 console.log(compareStr('house', 'houses') )// false
 
