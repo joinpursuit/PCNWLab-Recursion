@@ -35,3 +35,11 @@ const pow = (n1,n2) => {
   }
 }
 console.log(pow(5,5))
+
+const multiply = (n1,n2) => {
+if (n2 === 0 || n1 === 0) return 0
+if (n1 === 1) return n2
+if (n2 === 1) return n1
+return n1 + (multiply(n1,n2 - 1))
+}
+console.log(multiply(15,10))
