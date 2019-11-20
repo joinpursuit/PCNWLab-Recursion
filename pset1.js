@@ -116,7 +116,7 @@ const reverse = s => {
     if(s.length === 1) return s;
     return s.slice(s.length-1) + reverse(s.substring(0,s.length-1));
 }
-console.log(reverse("hello"));
+// console.log(reverse("hello"));
 
 /*  7
     @function isPalindrome
@@ -125,7 +125,14 @@ console.log(reverse("hello"));
     @description:
         - recursively determine if a string is a palindrome
 */
-
+const isPalindrome = string => {
+    if(string.length < 2) return true;
+    if(string[0] === string[string.length-1]){
+        return isPalindrome(string.slice(1, string.length-1));
+    }
+    return false;
+}
+// console.log(isPalindrome("thisisnotapalindrome"))
 
 
 /*  8
