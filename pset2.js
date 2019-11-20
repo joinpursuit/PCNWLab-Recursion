@@ -1,26 +1,55 @@
 // Sum all integers below a given integer.
 // sumBelow(10); // 45
 // sumBelow(7); // 21
-const sumBelow = n => {};
+const sumBelow = n => {
+    if(n === 0) return 0;
+    return n-1 + sumBelow(n-1);
+}
+console.log(sumBelow(10));
+console.log(sumBelow(7));
 
 // Determine if a number is a power of two.
 // powerOfTwo(1); // true
 // powerOfTwo(16); // true
 // powerOfTwo(10); // false
-const powerOfTwo = n => {};
+const powerOfTwo = n => {
+    if(n === 0) return false
+    if(n === 1) return true;
+    if(n % 2 === 0){
+        return powerOfTwo(n / 2);
+    } else {
+        return false;
+    }
+}
+console.log(powerOfTwo(1)) // true
+console.log(powerOfTwo(16)); // true
+console.log(powerOfTwo(10)); // false
+console.log(powerOfTwo(120));
+
 
 // Write a function that returns the remainder of x divided by y without using the
 // modulo (%) operator.
 // modulo(5,2) // 1
 // modulo(17,5) // 2
 // modulo(22,6) // 4
-const modulo = (x, y) => {};
+const modulo = (x, y) => {
+    if(x < y) return x;
+    return modulo(x-y, y);
+};
+console.log(modulo(5, 2))
+console.log(modulo(17, 5))
+console.log(modulo(22, 6))
 
 // Find the greatest common divisor (gcd) of two positive numbers. The GCD of two
 // integers is the greatest integer that divides both x and y with no remainder.
 // gcd(4,36); // 4
 // https://www.khanacademy.org/computing/computer-science/cryptography/modarithmetic/a/the-euclidean-algorithm
-const gcd = (x, y) => {};
+const gcd = (x, y) => {
+    if(x === 0) return y;
+    if(y === 0) return x;
+    return gcd(x/y, y/x);
+}
+console.log(gcd(4,36))
 
 // Write a function that compares each character of two strings and returns true if
 // both are identical.
@@ -30,9 +59,11 @@ const compareStr = (str1, str2) => {};
 
 
 // Given an array of words, return a new array containing each word capitalized.
-// var words = ['i', 'am', 'learning', 'recursion'];
+var words = ['i', 'am', 'learning', 'recursion'];
 // capitalizedWords(words); // ['I', 'AM', 'LEARNING', 'RECURSION']
-const capitalizeWords = array => {};
+const capitalizeWords = array => {
+
+};
 
 
 // Alternate the numbers in an array between positive and negative regardless of
