@@ -32,13 +32,24 @@ console.log(powerOfTwo(120));
 // modulo(5,2) // 1
 // modulo(17,5) // 2
 // modulo(22,6) // 4
-const modulo = (x, y) => {};
+const modulo = (x, y) => {
+    if(x < y) return x;
+    return modulo(x-y, y);
+};
+console.log(modulo(5, 2))
+console.log(modulo(17, 5))
+console.log(modulo(22, 6))
 
 // Find the greatest common divisor (gcd) of two positive numbers. The GCD of two
 // integers is the greatest integer that divides both x and y with no remainder.
 // gcd(4,36); // 4
 // https://www.khanacademy.org/computing/computer-science/cryptography/modarithmetic/a/the-euclidean-algorithm
-const gcd = (x, y) => {};
+const gcd = (x, y) => {
+    if(x === 0) return y;
+    if(y === 0) return x;
+    return gcd(x/y, y/x);
+}
+console.log(gcd(4,36))
 
 // Write a function that compares each character of two strings and returns true if
 // both are identical.
@@ -48,9 +59,11 @@ const compareStr = (str1, str2) => {};
 
 
 // Given an array of words, return a new array containing each word capitalized.
-// var words = ['i', 'am', 'learning', 'recursion'];
+var words = ['i', 'am', 'learning', 'recursion'];
 // capitalizedWords(words); // ['I', 'AM', 'LEARNING', 'RECURSION']
-const capitalizeWords = array => {};
+const capitalizeWords = array => {
+
+};
 
 
 // Alternate the numbers in an array between positive and negative regardless of
