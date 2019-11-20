@@ -113,10 +113,9 @@ const multiply = (a, b) => {
 */
 const reverse = s => {
     if(s.length <= 0) return "";
-    if(s.length === 1) return s;
     return s.slice(s.length-1) + reverse(s.substring(0,s.length-1));
 }
-// console.log(reverse("hello"));
+// console.log(reverse("Hello World"));
 
 /*  7
     @function isPalindrome
@@ -143,6 +142,12 @@ const isPalindrome = string => {
     @description:
         - recursively implement map
 */
+const map = (arr,cb) => {
+    if(arr.length <= 0) return [];
+    for(let i = 0; i < arr.length; i++){
+        return cb(arr[i]) = map(arr,cb)
+    }
+}
 
 
 /*  9

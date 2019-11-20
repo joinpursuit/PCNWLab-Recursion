@@ -1,7 +1,12 @@
 // Sum all integers below a given integer.
 // sumBelow(10); // 45
 // sumBelow(7); // 21
-const sumBelow = n => {};
+const sumBelow = n => {
+    if(n === 0) return 0;
+    return n-1 + sumBelow(n-1);
+}
+console.log(sumBelow(10));
+console.log(sumBelow(7));
 
 // Determine if a number is a power of two.
 // powerOfTwo(1); // true
@@ -10,11 +15,16 @@ const sumBelow = n => {};
 const powerOfTwo = n => {
     if(n === 0) return false
     if(n === 1) return true;
-    return Math.log2(powerOfTwo(n-1)) % 1 === 0;
+    if(n % 2 === 0){
+        return powerOfTwo(n / 2);
+    } else {
+        return false;
+    }
 }
 console.log(powerOfTwo(1)) // true
 console.log(powerOfTwo(16)); // true
 console.log(powerOfTwo(10)); // false
+console.log(powerOfTwo(120));
 
 
 // Write a function that returns the remainder of x divided by y without using the
