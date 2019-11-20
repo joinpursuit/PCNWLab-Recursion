@@ -56,12 +56,12 @@ console.log(getInRange2(9,5))
         - determine without using % operator or Math.floor(), etc
             whether or not a number is even
 */
-const isEven = num => {
-    if(num === 0) return;
-    ((num / 2) * 2 === num);
-    return isEven(num);
-}
-console.log(isEven(3))
+// const isEven = num => {
+//     if(num === 0) return true;
+//     ((num === 1) return false;
+//     return isEven(num);
+// }
+// console.log(isEven(3))
 /*  4
     @function pow
     @param b {number}
@@ -71,7 +71,9 @@ console.log(isEven(3))
         - determine without using anything other than multiplication
             the value of b^n
 */
-
+const pow = num => {
+    
+}
 /*  5
     @function multiply
     @param a {number}
