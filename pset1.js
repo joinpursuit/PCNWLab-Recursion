@@ -50,8 +50,8 @@ const getInRange = (s, e, arr=[]) => {
         return getInRange(s+1,e, arr);
     } 
 }
-console.log(getInRange(5,2));
-console.log(getInRange(2,5));
+// console.log(getInRange(5,2));
+// console.log(getInRange(2,5));
 
 /*  3
     @function isEven
@@ -111,12 +111,12 @@ const multiply = (a, b) => {
     @description:
         - recursively reverse a string
 */
-// const reverse = s => {
-//     if(s.length <= 0) return "no string to reverse";
-//     if(s.length === 1) return s;
-//     return s.length-1 + reverse(s+1);
-// }
-// console.log(reverse("sucka"))
+const reverse = s => {
+    if(s.length <= 0) return "";
+    if(s.length === 1) return s;
+    return s.slice(s.length-1) + reverse(s.substring(0,s.length-1));
+}
+console.log(reverse("hello"));
 
 /*  7
     @function isPalindrome
@@ -125,6 +125,7 @@ const multiply = (a, b) => {
     @description:
         - recursively determine if a string is a palindrome
 */
+
 
 
 /*  8
