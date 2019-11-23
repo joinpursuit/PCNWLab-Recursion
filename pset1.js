@@ -17,6 +17,13 @@
             or, 5! = 5*4*3*2*1
 */
 
+const factorial =(num) =>{
+    if(num === 0) return 1
+    return num*factorial(num-1)
+}
+console.log(factorial(5))
+
+
 /*  2
     @function getInRange
     @param s {number}
@@ -30,6 +37,15 @@
     HINT:
         - remember to account for what happens if s > e!
 */
+const getInRange = (num1, num2) =>{
+    let output = []
+    if(num1 > num2) return output
+    output.push(num1)
+    return output.concat(getInRange(num1+1, num2))
+
+
+}
+console.log(getInRange(2,5))
 
 /*  3
     @function isEven
@@ -39,6 +55,15 @@
         - determine without using % operator or Math.floor(), etc
             whether or not a number is even
 */
+
+
+const isEven = n => {
+    if(n === 0) return true;
+    if(n === 1) return false;
+    return isEven(n-2);
+}
+console.log(isEven(100));
+
 
 /*  4
     @function pow
@@ -50,6 +75,15 @@
             the value of b^n
 */
 
+
+const pow = (b,n) => {
+    if(n < 0) return 1 / b**n
+    if(n === 0) return 1;
+    if(n === 1) return b;
+    return b * pow(b,n-1);
+}
+console.log(pow(4,2));
+
 /*  5
     @function multiply
     @param a {number}
@@ -59,6 +93,15 @@
         - determine without using multiplication operator the product
             of a and b
 */
+const multiply = (num1, num2) => {
+    if (num1 === 0 || num2 === 0) return;
+    if (num1 === 1) return num2 
+    if (num2 === 1) return num1
+    return num1 + multiply(num1, num2 - 1)
+}
+
+console.log(multiply(4,4))
+
 
 /*  6
     @function reverse
