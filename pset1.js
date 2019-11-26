@@ -53,6 +53,7 @@ const getInRange = (s, e, arr=[]) => {
 // console.log(getInRange(5,2));
 // console.log(getInRange(2,5));
 
+
 /*  3
     @function isEven
     @param n {number}
@@ -67,6 +68,7 @@ const isEven = n => {
     return isEven(n-2);
 }
 // console.log(isEven(10000));
+
 
 /*  4
     @function pow
@@ -117,6 +119,7 @@ const reverse = s => {
 }
 // console.log(reverse("Hello World"));
 
+
 /*  7
     @function isPalindrome
     @param s {string}
@@ -132,6 +135,7 @@ const isPalindrome = string => {
     return false;
 }
 // console.log(isPalindrome("thisisnotapalindrome"))
+// console.log(isPalindrome("momomom"));
 
 
 /*  8
@@ -143,10 +147,7 @@ const isPalindrome = string => {
         - recursively implement map
 */
 const map = (arr,cb) => {
-    if(arr.length <= 0) return [];
-    for(let i = 0; i < arr.length; i++){
-        return cb(arr[i]) = map(arr,cb)
-    }
+    
 }
 
 

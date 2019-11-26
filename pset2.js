@@ -45,32 +45,51 @@ console.log(modulo(22, 6))
 // gcd(4,36); // 4
 // https://www.khanacademy.org/computing/computer-science/cryptography/modarithmetic/a/the-euclidean-algorithm
 const gcd = (x, y) => {
-    if(x === 0) return y;
     if(y === 0) return x;
-    return gcd(x/y, y/x);
+    return gcd(y, x % y);
 }
 console.log(gcd(4,36))
+console.log(gcd(36,36))
+console.log(gcd(0,20));
 
 // Write a function that compares each character of two strings and returns true if
 // both are identical.
 // compareStr('house', 'houses') // false
 // compareStr('tomato', 'tomato') // true
-const compareStr = (str1, str2) => {};
-
+const compareStr = (str1, str2) => {
+    if(str1.length === 0 && str2.length === 0) return true;
+    if(str1[0] === str2[0]){
+        return compareStr(str1.slice(1), str2.slice(1));
+    } else {
+        return false;
+    }
+}
+console.log(compareStr('house', 'houses')) // false
+console.log(compareStr('tomato', 'tomato')) // true
 
 // Given an array of words, return a new array containing each word capitalized.
 var words = ['i', 'am', 'learning', 'recursion'];
 // capitalizedWords(words); // ['I', 'AM', 'LEARNING', 'RECURSION']
 const capitalizeWords = array => {
-
-};
-
+    let result = [];
+    var cb = array => {
+        if(array.length === 0) return;
+        result.push(array[0].toUpperCase());
+        return cb(array.slice(1));
+    }
+    cb(array);
+    return result;
+}
+console.log(capitalizeWords([]))
+console.log(capitalizeWords(words));
 
 // Alternate the numbers in an array between positive and negative regardless of
 // their original sign. The first number in the index always needs to be positive.
 // alternateSign([2,7,8,3,1,4]) // [2,-7,8,-3,1,-4]
 // alternateSign([-2,-7,8,3,-1,4]) // [2,-7,8,-3,1,-4]
-const alternateSign = array => {};
+const alternateSign = array => {
+    
+};
 
 // Write a function that accepts a string and creates an array where each letter
 // occupies an index of the array.
