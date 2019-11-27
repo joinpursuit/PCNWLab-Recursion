@@ -126,8 +126,12 @@ console.log(buildList(100,0));
 // Count the occurence of a value in a list.
 // countOccurrence([2,7,4,4,1,4], 4) // 3
 // countOccurrence([2,'banana',4,4,1,'banana'], 'banana') // 2
-const countOccurrence = (array, value) => {};
-
+const countOccurrence = (array, value) => {
+    if(array.length === 0) return 0;
+    return (array[0] === value) + countOccurrence(array.slice(1), value);
+};
+console.log(countOccurrence([2,7,4,4,1,4], 4));
+console.log(countOccurrence([2,'banana',4,4,1,'banana'], 'banana'));
 
 // Sum all numbers in an array containing nested arrays.
 // arraySum([1,[2,3],[[4]],5]); // 15
