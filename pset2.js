@@ -83,17 +83,31 @@ const capitalizeWords = array => {
 console.log(capitalizeWords([]))
 console.log(capitalizeWords(words));
 
+
 // Alternate the numbers in an array between positive and negative regardless of
 // their original sign. The first number in the index always needs to be positive.
 // alternateSign([2,7,8,3,1,4]) // [2,-7,8,-3,1,-4]
 // alternateSign([-2,-7,8,3,-1,4]) // [2,-7,8,-3,1,-4]
 const alternateSign = array => {
-    
-};
+    if(array.length === 0) return array;
+    if(array[0] < 0) array[0] = -array[0];
+    if(array[1] > 0) array[1] = -array[1];
+    return [array[0],array[1]].concat(alternateSign(array.slice(2)))
+}
+console.log(alternateSign([2,7,8,3,1,4]))
+console.log(alternateSign([-2,-7,8,3,-1,4]));
+
 
 // Write a function that accepts a string and creates an array where each letter
 // occupies an index of the array.
-const createArray = str => {};
+const createArray = str => {
+    let arr = [];
+    if(str.length === 0) return arr;
+    arr.push(str[0]);
+    arr = arr.concat(createArray(str.slice(1)));
+    return arr;
+};
+console.log(createArray("Hello World"));
 
 // Create a new array with a given value and length.
 // buildList(0,5) // [0,0,0,0,0]
