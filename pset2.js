@@ -112,7 +112,16 @@ console.log(createArray("Hello World"));
 // Create a new array with a given value and length.
 // buildList(0,5) // [0,0,0,0,0]
 // buildList(7,3) // [7,7,7]
-const buildList = (value, length) => {};
+const buildList = (value, length) => {
+    let arr = []
+    if(length === 0) return arr;
+    arr.push(value);
+    arr = arr.concat(buildList(value, length-1));
+    return arr;
+};
+console.log(buildList(0,5));
+console.log(buildList(7,3));
+console.log(buildList(100,0));
 
 // Count the occurence of a value in a list.
 // countOccurrence([2,7,4,4,1,4], 4) // 3
