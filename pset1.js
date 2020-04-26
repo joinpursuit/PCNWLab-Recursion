@@ -17,7 +17,7 @@
             or, 5! = 5*4*3*2*1
 */
 const factorial = (num) =>{
-    if(num ===1) return 1;
+    if(num === 1) return 1;
     return num * factorial(num-1)
 }
 console.log(factorial(5))
@@ -36,10 +36,12 @@ console.log(factorial(5))
         - remember to account for what happens if s > e!
 */
 // const getInRange = (num1, num2) =>{
-//     if(num1 <= num2) newArr.push(num1);
-//     // getInRange(num1+1)
-//     let newArr = getInRange(num1+1)
+//     if(num1 > num2) return []
+//     let newArr = getInRange(num1+1);
+//     newArr.push(num1)
+//     return newArr
 // }
+console.log("hi")
 // console.log(getInRange(2, 5))
 
 /*  3
@@ -102,12 +104,7 @@ console.log(multiply(5, 5))
 
 const reverse = (str) => {
     if(str.length === 0) return "";
-    return str.slice(str.length) + reverse(str.slice(0, str.length - 1))
-    
-    // slice(1) + reverse(str)
-    
-    // (str.length - 1) + reverse(str.length - 1)
-    
+    return str.slice(str.length-1) + reverse(str.slice(0, str.length - 1))
 }
 console.log(reverse("hello"))
 
