@@ -18,9 +18,9 @@
 */
 
 const factorial = (n) => {
-    if (n <= 1) return 1;
-    return factorial(n - 1) * n;
-}
+  if (n <= 1) return 1;
+  return factorial(n - 1) * n;
+};
 
 /*  2
     @function getInRange
@@ -36,18 +36,18 @@ const factorial = (n) => {
         - remember to account for what happens if s > e!
 */
 
-const getInRange = (s, e, arr = []) {
-    if (s < e) {
-        arr.push(s);
-        return arr.concat(getInRange(s + 1, e));
-    } else if (s > e) {
-        arr.push(s);
-        return arr.concat(getInRange(s - 1, e));
-    } else {
-        arr.push(s);
-        return arr;
-    }
-}
+const getInRange = (s, e, arr = []) => {
+  if (s < e) {
+    arr.push(s);
+    return arr.concat(getInRange(s + 1, e));
+  } else if (s > e) {
+    arr.push(s);
+    return arr.concat(getInRange(s - 1, e));
+  } else {
+    arr.push(s);
+    return arr;
+  }
+};
 
 /*  3
     @function isEven
@@ -74,6 +74,12 @@ const isEven = (num) => {
             the value of b^n
 */
 
+const pow = (b, n) => {
+  if (b <= 1 || n === 1) return b;
+  if (n === 0) return 1;
+  return b * pow(b, n - 1);
+};
+
 /*  5
     @function multiply
     @param a {number}
@@ -84,6 +90,15 @@ const isEven = (num) => {
             of a and b
 */
 
+const multiply = (a, b) => {
+  if (b === 0) return 0;
+  return a + multiply(a, b - 1);
+};
+
+// console.log(multiply(12, 2));
+// console.log(multiply(2, 6));
+// console.log(multiply(0, 5));
+
 /*  6
     @function reverse
     @param s {string}
@@ -91,6 +106,15 @@ const isEven = (num) => {
     @description:
         - recursively reverse a string
 */
+
+const reverse = (string) => {
+  if (string.length === 0) return string;
+  return reverse(string.substr(1)) + string.charAt(0);
+};
+
+console.log(reverse("hello"));
+console.log(reverse("batman"));
+console.log(reverse("women"));
 
 /*  7
     @function isPalindrome
