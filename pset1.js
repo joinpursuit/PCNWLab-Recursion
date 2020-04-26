@@ -17,6 +17,11 @@
             or, 5! = 5*4*3*2*1
 */
 
+const factorial = (n) => {
+    if (n <= 1) return 1;
+    return factorial(n - 1) * n;
+}
+
 /*  2
     @function getInRange
     @param s {number}
@@ -31,6 +36,19 @@
         - remember to account for what happens if s > e!
 */
 
+const getInRange = (s, e, arr = []) {
+    if (s < e) {
+        arr.push(s);
+        return arr.concat(getInRange(s + 1, e));
+    } else if (s > e) {
+        arr.push(s);
+        return arr.concat(getInRange(s - 1, e));
+    } else {
+        arr.push(s);
+        return arr;
+    }
+}
+
 /*  3
     @function isEven
     @param n {number}
@@ -39,6 +57,12 @@
         - determine without using % operator or Math.floor(), etc
             whether or not a number is even
 */
+
+const isEven = (num) => {
+  if (num === 0) return true;
+  if (num === 1) return false;
+  return num > 0 ? isEven(num - 2) : isEven(num + 2);
+};
 
 /*  4
     @function pow
@@ -76,7 +100,6 @@
         - recursively determine if a string is a palindrome
 */
 
-
 /*  8
     @function map
     @param arr {array}
@@ -85,7 +108,6 @@
     @description:
         - recursively implement map
 */
-
 
 /*  9
     @function filter
@@ -96,7 +118,6 @@
         - recursively implement filter
 */
 
-
 /*  10
     @function reduce
     @param arr {array}
@@ -106,7 +127,3 @@
     @description:
         - recursively implement reduce
 */
-
-
-
-
