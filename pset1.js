@@ -17,6 +17,17 @@
             or, 5! = 5*4*3*2*1
 */
 
+const factorial = (n) =>{
+    if(n === 0){
+        return 1
+    }
+
+    return n * factorial(n - 1)
+
+}
+
+console.log(factorial(5))
+
 /*  2
     @function getInRange
     @param s {number}
@@ -31,6 +42,16 @@
         - remember to account for what happens if s > e!
 */
 
+// const getInRange = (x, y, arr = []) => {
+//     if(x === y){
+//         arr.push(x)
+//         return arr
+//     }arr.push(y)
+//     y--
+//     return getInRange(x, y, arr)
+// }
+
+// console.log(getInRange(9,5))
 /*  3
     @function isEven
     @param n {number}
@@ -67,7 +88,14 @@
     @description:
         - recursively reverse a string
 */
-
+const reverse = (str, arr) =>{
+    if(str <= 0){
+        return arr;
+    }else{
+        return reverse(str.slice(1), str.charAt(0) + (arr|| ""))
+    }
+}
+console.log(reverse("hello"))
 /*  7
     @function isPalindrome
     @param s {string}
