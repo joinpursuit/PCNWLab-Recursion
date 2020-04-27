@@ -122,10 +122,10 @@ console.log(reverseString("hello"))
 - recursively determine if a string is a palindrome
 */
 console.log('question 7')
-const isPalindrome = (str)=>{
-    newStr = ""
-    if(str.length === newStr.length ) return str === newStr ? true : false
-    // return ???????????????????????
+const isPalindrome =(str, i = 0, j = str.length - 1) => {
+    if(i > j) return true; 
+    if(str[i] !== str[j]) return false; 
+    return isPalindrome(str, i + 1, j - 1)
 }
 console.log(isPalindrome("ABBA"))
 
@@ -137,7 +137,12 @@ console.log(isPalindrome("ABBA"))
     @returns {array}
     @description:
         - recursively implement map
+    
 */
+const map = (arr, i)=>{
+    if(arr.length ==i) return i
+    return map(arr, i+1)
+}
 
 
 /*  9
