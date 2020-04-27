@@ -70,8 +70,11 @@ console.log(isEven(4))
         - determine without using anything other than multiplication
             the value of b^n
 */
-
-
+const pow = (b,n) => {
+    if(n === 0) return 1;
+    else return b * pow(b, n - 1);
+}
+console.log(pow(5,2))
 
 
 /*  5
@@ -100,8 +103,9 @@ console.log(multiply(1,4))
 
 const reverse = (s) => {
     if(s === "") return ""
-    // else return string.reverse
+    else return reverse(s.substr(1)) + s.charAt(0)
 }
+console.log(reverse("hello"))
 
 /*  7
     @function isPalindrome
@@ -110,7 +114,16 @@ const reverse = (s) => {
     @description:
         - recursively determine if a string is a palindrome
 */
-
+const isPlaindrome = (s) => {
+    if(s.length < 2) return true
+    if(s[0] == s[s.length -1]) {
+        return isPlaindrome(s.slice(1, s.length -1));
+    }
+    return false;
+}
+console.log(isPlaindrome("hannah"))
+console.log(isPlaindrome("sarah"))
+console.log(isPlaindrome("i"))
 
 /*  8
     @function map
@@ -120,7 +133,17 @@ const reverse = (s) => {
     @description:
         - recursively implement map
 */
+const map = (arr, cb) => {
+    if(arr.length === 1) return cb(arr);
+    else return [cb(arr[0])].concat(map(arr.slice(1), cb));
+}
+let data = [1,2,3];
 
+let multiplyThree = (n) => {
+    return n * 3
+};
+
+console.log(map(data, multiplyThree))
 
 /*  9
     @function filter
@@ -130,7 +153,9 @@ const reverse = (s) => {
     @description:
         - recursively implement filter
 */
-
+const filter = (arr, cb) => {
+    if(arr.length = 1) return cb(arr)
+}
 
 /*  10
     @function reduce
