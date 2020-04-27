@@ -19,6 +19,12 @@
         - factorial is defined to be n!
             or, 5! = 5*4*3*2*1
 */
+    const factorial = (num) => {
+        if(num <= 1) return 1
+        return factorial(num -1 ) * num
+    }
+    console.log(factorial(5))
+
 
 /*  2
     @function getInRange
