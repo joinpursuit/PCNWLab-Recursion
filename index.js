@@ -67,6 +67,7 @@ const isPalindrome = (string) => {
   return false;
 };
 console.log(isPalindrome("racecar"));
+console.log(isPalindrome("carc"));
 
 // Q8
 console.log("Question 8");

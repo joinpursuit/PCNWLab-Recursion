@@ -124,6 +124,14 @@ console.log(reverse("women"));
         - recursively determine if a string is a palindrome
 */
 
+const isPalindrome = (string) => {
+  if (string.length < 2) return true;
+  if (string[0] === string[string.length - 1]) {
+    return isPalindrome(string.slice(1, string.length - 1));
+  }
+  return false;
+};
+
 /*  8
     @function map
     @param arr {array}
@@ -133,6 +141,11 @@ console.log(reverse("women"));
         - recursively implement map
 */
 
+const map = (arr, cb) => {
+  if (arr.length === 0) return [];
+  return [cb(arr[0])].concat(map(arr.slice(1), cb));
+};
+
 /*  9
     @function filter
     @param arr {array}
@@ -141,6 +154,13 @@ console.log(reverse("women"));
     @description:
         - recursively implement filter
 */
+
+const filter = (arr, callback) => {
+  if (arr.length === 0) return [];
+  return [callback(arr[0]), ...filter(arr.slice(1), callback)];
+};
+
+console.log(filter([1, 2, 3, 3]), (el) => el !== 3);
 
 /*  10
     @function reduce
