@@ -104,10 +104,11 @@ const strRev = (str)=>{
     return strRev(str.substr(1)+ str.charAt(0))
 }
 function reverseString(str) {
-    if (str === "")
-    return "";
-    else
+    if (!str.length){ 
+        return ""
+    }else{
     return reverseString(str.substr(1)) + str.charAt(0);
+}
 }
 
 console.log(reverseString("hello"))
