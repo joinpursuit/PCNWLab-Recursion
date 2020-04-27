@@ -1,49 +1,79 @@
 // Sum all integers below a given integer.
 // sumBelow(10); // 45
 // sumBelow(7); // 21
-const sumBelow = n => {};
+const sumBelow = (n) => {
+  if (n === 0) return 0;
+  return n + sum(n - 1);
+};
 
 // Determine if a number is a power of two.
 // powerOfTwo(1); // true
 // powerOfTwo(16); // true
 // powerOfTwo(10); // false
-const powerOfTwo = n => {};
+const powerOfTwo = (n) => {
+  let result = n / 2;
+  if (result < 2) return false;
+  if (result === 2) return true;
+  return powerOfTwo(result);
+};
 
 // Write a function that returns the remainder of x divided by y without using the
 // modulo (%) operator.
 // modulo(5,2) // 1
 // modulo(17,5) // 2
 // modulo(22,6) // 4
-const modulo = (x, y) => {};
+const modulo = (x, y) => {
+  if (x === 0) return 0;
+  if (x - y < 0) return x;
+  return modulo(x - 1, y);
+};
 
 // Find the greatest common divisor (gcd) of two positive numbers. The GCD of two
 // integers is the greatest integer that divides both x and y with no remainder.
 // gcd(4,36); // 4
 // https://www.khanacademy.org/computing/computer-science/cryptography/modarithmetic/a/the-euclidean-algorithm
-const gcd = (x, y) => {};
+const gcd = (x, y) => {
+  if (x > y) return gcd(y, x % y);
+  if (y === 0) return x;
+};
 
 // Write a function that compares each character of two strings and returns true if
 // both are identical.
 // compareStr('house', 'houses') // false
 // compareStr('tomato', 'tomato') // true
-const compareStr = (str1, str2) => {};
-
+const compareStr = (str1, str2) => {
+  if (str1.length === 1 && str2.length === 1) {
+    if (str1[0] === str2[0]) {
+      return true;
+    }
+  }
+  if (str1[0] === str2[0]) {
+    return compareStr(str1.slice(1), str2.slice(1));
+  }
+  if (str1[0] !== str2[0]) {
+    return false;
+  }
+};
 
 // Given an array of words, return a new array containing each word capitalized.
 // var words = ['i', 'am', 'learning', 'recursion'];
 // capitalizedWords(words); // ['I', 'AM', 'LEARNING', 'RECURSION']
-const capitalizeWords = array => {};
-
+const capitalizeWords = (array) => {
+  if (!array.length) return [];
+  return [array[0].toUpperCase()].concat(capitalizedWords(array.slice(1)));
+};
 
 // Alternate the numbers in an array between positive and negative regardless of
 // their original sign. The first number in the index always needs to be positive.
 // alternateSign([2,7,8,3,1,4]) // [2,-7,8,-3,1,-4]
 // alternateSign([-2,-7,8,3,-1,4]) // [2,-7,8,-3,1,-4]
-const alternateSign = array => {};
+const alternateSign = (array) => {
+    
+};
 
 // Write a function that accepts a string and creates an array where each letter
 // occupies an index of the array.
-const createArray = str => {};
+const createArray = (str) => {};
 
 // Create a new array with a given value and length.
 // buildList(0,5) // [0,0,0,0,0]
@@ -55,17 +85,15 @@ const buildList = (value, length) => {};
 // countOccurrence([2,'banana',4,4,1,'banana'], 'banana') // 2
 const countOccurrence = (array, value) => {};
 
-
 // Sum all numbers in an array containing nested arrays.
 // arraySum([1,[2,3],[[4]],5]); // 15
-const arraySum = array => {};
+const arraySum = (array) => {};
 
 // Write a function that counts the number of times a key occurs in an object.
 // var obj = {'e':{'x':'y'},'t':{'r':{'e':'r'},'p':{'y':'r'}},'y':'e'};
 // countKeysInObj(obj, 'r') // 1
 // countKeysInObj(obj, 'e') // 2
 const countKeysInObj = (obj, key) => {};
-
 
 // Return the sum of all even numbers in an object containing nested objects.
 // var obj1 = {
@@ -76,11 +104,11 @@ const countKeysInObj = (obj, key) => {};
 //   e: {e: {e: 2}, ee: 'car'}
 // };
 // nestedEvenSum(obj1); // 10
-const nestedEvenSum = obj => {};
+const nestedEvenSum = (obj) => {};
 
 // Flatten an array containing nested arrays.
 // flatten([1,[2],[3,[[4]]],5]); // [1,2,3,4,5]
-const flatten = array => {};
+const flatten = (array) => {};
 
 // Given a string, return an object containing tallies of each letter.
 // letterTally('potato'); // {p:1, o:2, t:2, a:1}
@@ -91,5 +119,4 @@ const letterTally = (str, obj) => {};
 // elements should not be changed.
 // compress([1,2,2,3,4,4,5,5,5]) // [1,2,3,4,5]
 // compress([1,2,2,3,4,4,2,5,5,5,4,4]) // [1,2,3,4,2,5,4]
-const compress = list => {};
-
+const compress = (list) => {};
