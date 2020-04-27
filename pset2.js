@@ -14,13 +14,20 @@ const powerOfTwo = n => {};
 // modulo(5,2) // 1
 // modulo(17,5) // 2
 // modulo(22,6) // 4
-const modulo = (x, y) => {};
+const modulo = (x, y) => {
+    if(x===0) return 0;
+    if(x-y<0) return x;
+    return modulo(x-1, y)
+};
 
 // Find the greatest common divisor (gcd) of two positive numbers. The GCD of two
 // integers is the greatest integer that divides both x and y with no remainder.
 // gcd(4,36); // 4
 // https://www.khanacademy.org/computing/computer-science/cryptography/modarithmetic/a/the-euclidean-algorithm
-const gcd = (x, y) => {};
+const gcd = (x, y) => {
+    if(x>y) return gcd(y,x)
+    
+};
 
 // Write a function that compares each character of two strings and returns true if
 // both are identical.
