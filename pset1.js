@@ -137,6 +137,7 @@ const map = (arr, cb) => {
     if(arr.length === 1) return cb(arr);
     else return [cb(arr[0])].concat(map(arr.slice(1), cb));
 }
+
 let data = [1,2,3];
 
 let multiplyThree = (n) => {
@@ -154,7 +155,8 @@ console.log(map(data, multiplyThree))
         - recursively implement filter
 */
 const filter = (arr, cb) => {
-    if(arr.length = 1) return cb(arr)
+    if(arr.length === 0) return cb(arr);
+    
 }
 
 /*  10
