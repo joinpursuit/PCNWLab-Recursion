@@ -1,13 +1,21 @@
 // Sum all integers below a given integer.
 // sumBelow(10); // 45
 // sumBelow(7); // 21
-const sumBelow = n => {};
+const sumBelow = n => {
+    if(n === 1) return 0;
+    return (n-1) + sumBelow(n-1)
+};
+console.log(sumBelow(10))
 
 // Determine if a number is a power of two.
 // powerOfTwo(1); // true
 // powerOfTwo(16); // true
 // powerOfTwo(10); // false
-const powerOfTwo = n => {};
+const powerOfTwo = n => {
+    if(n===1) return true;
+    
+    return 
+};
 
 // Write a function that returns the remainder of x divided by y without using the
 // modulo (%) operator.
